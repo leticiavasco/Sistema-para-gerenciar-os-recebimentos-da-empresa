@@ -1,0 +1,516 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #4f0988; /* azul principal */
+  --bg-color: #f0f4f8;
+  --text-color: #202020;
+  --btn-hover: #6f25ac;
+  --nav-height: 60px;
+  --font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0 20px;
+  height: var(--nav-height);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.navbar .nav-links li a:hover,
+.navbar .nav-links li a.active {
+  background-color: var(--btn-hover);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px 20px 50px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  padding: 12px 25px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Features */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 50px 20px;
+  justify-content: center;
+}
+
+.feature {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Login */
+.login-section {
+  max-width: 400px;
+  margin: 80px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.login-section h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-section label {
+  margin: 10px 0 5px 0;
+}
+
+.login-section input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-section input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.login-section button {
+  margin-top: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  background-color: #4f0988;
+}
+
+/* Seção Serviço */
+.service-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+.service-section h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.service-section p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Tabela de faturas */
+.faturas-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.faturas-table th, .faturas-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.faturas-table th {
+  background-color: var(--primary-color);
+  color: white;
+  text-transform: uppercase;
+}
+
+.faturas-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Status */
+.pendente {
+  color: #FFA500; /* laranja */
+  font-weight: bold;
+}
+
+.pago {
+  color: #28a745; /* verde */
+  font-weight: bold;
+}
+
+.atrasado {
+  color: #dc3545; /* vermelho */
+  font-weight: bold;
+}
+
+/* RESPONSIVIDADE TABELA FATURAS */
+.faturas-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 20px;
+}
+
+/* Mantém a tabela bonita mesmo dentro do scroll */
+.faturas-table {
+  min-width: 700px;
+}
+
+.filtros-fatura {
+  margin: 20px 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filtros-fatura input,
+.filtros-fatura select {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Responsividade da tabela */
+@media (max-width: 600px) {
+  .faturas-table th,
+  .faturas-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+  
+/* Formulário de fatura */
+.fatura-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.fatura-form input, 
+.fatura-form select {
+  flex: 1 1 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.fatura-form button {
+  flex: 1 1 100%;
+  margin-top: 10px;
+}
+
+/* BOTÕES DA TABELA (Editar / Excluir) */
+.btn-edit, .btn-delete {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  color: white;
+}
+
+/* EDITAR */
+.btn-edit {
+  background-color: #007bff;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* EXCLUIR */
+.btn-delete {
+  background-color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #a71d2a;
+  transform: scale(1.05);
+}
+
+/* Estilo da Página Sobre */
+.sobre-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.sobre-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #4f0988;
+}
+
+.sobre-box h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.sobre-box h2 {
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.sobre-box p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.sobre-box ul {
+  margin-left: 20px;
+}
+
+.sobre-box ul li {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+/* Página Contato */
+.contato-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 50px;
+  gap: 40px;
+}
+
+/* Lado Esquerdo */
+.contato-info {
+  width: 40%;
+}
+
+.contato-info h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contato-info p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  font-size: 22px;
+  margin-right: 12px;
+  text-decoration: none;
+  color: #4f0988;
+}
+
+.social-icons a:hover {
+  opacity: 0.7;
+}
+
+/* Lado Direito */
+.contato-form-box {
+  width: 55%;
+}
+
+.subtitulo {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c9c9c9;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+.contato-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contato-form button {
+  width: 120px;
+  background: #4f0988;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.contato-form button:hover {
+  background: #4f0988;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .contato-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contato-info,
+  .contato-form-box {
+    width: 100%;
+  }
+
+  .contato-info h1 {
+    font-size: 28px;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: white;
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media(max-width:768px){
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: var(--nav-height);
+    right: 0;
+    width: 160px;
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+}
+

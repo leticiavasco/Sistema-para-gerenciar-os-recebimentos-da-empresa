@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviço - Contas a Receber</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Gerenciamento de Contas</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="fatura.html" class="active">Faturas</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="service-section">
+      <h1>Faturas e Recebimentos</h1>
+      <p>Visualize e gerencie todas as faturas emitidas para seus clientes.</p>
+
+      <!-- Formulário de cadastro de fatura -->
+      <form id="faturaForm" class="fatura-form">
+        <h2>Adicionar nova fatura</h2>
+        <input type="text" id="cliente" placeholder="Nome do cliente" required>
+        <input type="text" id="numero" placeholder="Número da fatura" required>
+        <input type="text" id="valor" placeholder="Valor (ex: R$ 1000,00)" required>
+        <input type="date" id="vencimento" placeholder="Data de vencimento" required>
+        <select id="status" required>
+          <option value="">Status</option>
+          <option value="Pendente">Pendente</option>
+          <option value="Pago">Pago</option>
+          <option value="Atrasado">Atrasado</option>
+        </select>
+        <button type="submit" class="btn-primary">Adicionar Fatura</button>
+      </form>
+
+      <!-- Tabela de faturas -->
+      <div class="faturas-table-container">
+  <table class="faturas-table">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Número da Fatura</th>
+        <th>Valor</th>
+        <th>Data de Vencimento</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="faturasBody">
+      <!-- Faturas adicionadas aparecerão aqui -->
+    </tbody>
+  </table>
+</div>
+
+<div class="filtros-fatura">
+  <input type="text" id="buscarFatura" placeholder="Buscar por cliente ou número...">
+  <select id="filtroStatus">
+    <option value="">Filtrar por Status</option>
+    <option value="Pendente">Pendente</option>
+    <option value="Pago">Pago</option>
+    <option value="Atrasado">Atrasado</option>
+  </select>
+</div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Contas a Receber. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

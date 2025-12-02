@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Contas a Receber</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Gerenciamento de Contas</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="fatura.html">Faturas</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="login-section">
+      <h1>Login</h1>
+      <form id="loginForm">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required minlength="6" placeholder="Senha">
+
+        <!-- Checkbox "Lembrar senha" -->
+        <div class="checkbox-container">
+          <input type="checkbox" id="lembrar" name="lembrar">
+          <label for="lembrar">Lembrar senha</label>
+        </div>
+
+        <button type="submit" class="btn-primary">Entrar</button>
+      </form>
+      <p>Não tem conta? <a href="contato.html">Cadastre-se</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Contas a Receber. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
